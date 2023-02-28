@@ -10,19 +10,6 @@ buildscript {
 	}
 }
 
-kubectl apply -f ./config/kompose/compose-default-networkpolicy.yaml,./config/kompose/db-claim.yaml,./config/kompose/db-deployment.yaml,./config/kompose/db-service.yaml
-kubectl expose deployment db --type=LoadBalancer --name=golf-db     
-
-kubectl apply -f ./config/kompose/db-service.yaml
-
-
-
-kubectl create -f ./config/kompose/db-deployment.yaml
-kubectl expose deployment db --name=db --type=LoadBalancer --target-port=5432
-
-kubectl port-forward --namespace default svc/pg-primary-postgresql 5432:5432
-
-
 
 
 task build() {
