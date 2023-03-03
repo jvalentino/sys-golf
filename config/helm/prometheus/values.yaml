@@ -3247,6 +3247,18 @@ prometheus:
       - targetPort: 8080
         interval: 10s
         path: "/actuator/prometheus"
+  - name: etl
+    namespace: default
+    selector:
+      matchLabels:
+        app.kubernetes.io/name: etl
+    namespaceSelector:
+      matchNames:
+        - default
+    endpoints:
+      - targetPort: 8080
+        interval: 10s
+        path: "/actuator/prometheus"
 
   ## Name of the ServiceMonitor to create
   ##
