@@ -7,6 +7,7 @@ kubectl port-forward --namespace default svc/etl 8081:8080 > build/etl.log 2>&1 
 kubectl port-forward --namespace default svc/frontend 3000:80 > build/frontend.log 2>&1 &
 kubectl port-forward --namespace default svc/prometheus-operated 9090:9090 > build/prometheus-server.log 2>&1 &
 kubectl port-forward --namespace default svc/alertmanager-operated 9093:9093 > build/alertmanager.log 2>&1 &
+kubectl port-forward --namespace default svc/elasticsearch-master 9200:9200 > build/elasticsearch.log 2>&1 &
 
 sleep 5
 ps -ef | grep port-forward
