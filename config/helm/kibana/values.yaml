@@ -1,8 +1,11 @@
-elasticsearchHosts: "https://elasticsearch-master:9200"
+elasticsearchHosts: "http://elasticsearch-master:9200"
+elasticsearchCertificateSecret: ""
+elasticsearchCertificateAuthoritiesFile: ""
+elasticsearchCredentialSecret: ""
 
 replicas: 1
 
-protocol: https
+protocol: http
 httpPort: 5601
 imagePullPolicy: "IfNotPresent"
 

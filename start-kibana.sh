@@ -1,9 +1,8 @@
 #!/bin/sh
 
-helm delete kibana || true
+kubectl delete deploy kibana-deployment || true
+kubectl create -f ./config/helm/kibana/deployment.yaml
 
-sleep 10
-helm install kibana \
-  elastic/kibana \
-  --wait \
-  --values ./config/helm/kibana/values.yaml
+kubectl wait pods -l app=kibana --for condition=Ready
+
+sh -x ./verify-kibana.sh
