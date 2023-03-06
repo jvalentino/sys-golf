@@ -5,6 +5,22 @@ antiAffinity: "soft"
 esJavaOpts: "-Xmx128m -Xms128m"
 
 
+esConfig:
+  elasticsearch.yml: |
+    xpack.security.enabled: false
+    xpack.security.enrollment.enabled: false
+
+
+createCert: false
+secret:
+  enabled: true
+  password: "password" 
+protocol: http
+
+networkPolicy:
+  http:
+    enabled: true
+
 #esConfig:
 #  elasticsearch.yml: |
 #    xpack.security.enabled: "false"

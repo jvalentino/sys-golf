@@ -1,0 +1,22 @@
+elasticsearchHosts: "https://elasticsearch-master:9200"
+
+replicas: 1
+
+protocol: https
+httpPort: 5601
+imagePullPolicy: "IfNotPresent"
+
+
+kibanaConfig:
+  kibana.yml: |
+    server.ssl:
+      enabled: "false"
+
+
+resources:
+  requests:
+    cpu: "55m"
+    memory: "512Mi"
+  limits:
+    cpu: "1000m"
+    memory: "2Gi"
