@@ -4,6 +4,7 @@ antiAffinity: "soft"
 # Shrink default JVM heap.
 esJavaOpts: "-Xmx128m -Xms128m"
 
+clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
 
 esConfig:
   elasticsearch.yml: |
@@ -40,4 +41,4 @@ volumeClaimTemplate:
   storageClassName: "standard"
   resources:
     requests:
-      storage: 100M
+      storage: 1024M
