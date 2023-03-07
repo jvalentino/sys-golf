@@ -14,10 +14,21 @@ buildscript {
 
 task build() {
 	doLast {
-		// 
-		//exec(layout, './gradlew clean build --stacktrace', "../sys-foxtrot-rest")
-		//exec(layout, './gradlew clean build --stacktrace', "../sys-foxtrot-etl")
-		//exec(layout, 'npm run build', "../sys-foxtrot-ui")
+		// ./start-minikube.sh
+		// minikube dashboard
+		
+		exec(layout, './gradlew build --stacktrace', "../sys-golf-rest")
+		exec(layout, './build-docker.sh', "../sys-golf-rest")
+
+		exec(layout, './gradlew build --stacktrace', "../sys-golf-etl")
+		exec(layout, './build-docker.sh', "../sys-golf-etl")
+
+		exec(layout, 'npm run build', "../sys-golf-ui")
+		exec(layout, './build-docker.sh', "../sys-golf-ui")
+
+		// exec(layout, './start.sh', ".")
+
+		// ./gradlew deleteWarehouseDb loadMainDb
 	}
 }
 

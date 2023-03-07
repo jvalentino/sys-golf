@@ -1,0 +1,9 @@
+#!/bin/sh
+./start-db.sh
+./start-dw.sh
+./start-elastic.sh
+./start-kibana.sh
+./start-backend.sh
+./start-etl.sh
+./start-frontend.sh
+./start-prometheus.sh
