@@ -2,7 +2,7 @@
 antiAffinity: "soft"
 
 # Shrink default JVM heap.
-esJavaOpts: "-Xmx128m -Xms128m"
+esJavaOpts: "-Xmx1g -Xms1g"
 
 clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
 
@@ -30,10 +30,10 @@ networkPolicy:
 resources:
   requests:
     cpu: "100m"
-    memory: "512M"
+    memory: "1024M"
   limits:
     cpu: "1000m"
-    memory: "512M"
+    memory: "2048M"
 
 # Request smaller persistent volumes.
 volumeClaimTemplate:

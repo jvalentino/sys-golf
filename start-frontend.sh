@@ -1,3 +1,4 @@
 #!/bin/sh
-helm delete frontend
-helm install frontend config/helm/frontend/ --values config/helm/frontend/values.yaml
+helm delete frontend --wait
+helm install frontend --wait config/helm/frontend/ --values config/helm/frontend/values.yaml
+sh -x ./verify-frontend.sh
