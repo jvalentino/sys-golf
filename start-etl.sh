@@ -1,3 +1,4 @@
 #!/bin/sh
-helm delete etl
-helm install etl config/helm/etl/ --values config/helm/etl/values.yaml
+helm delete etl --wait
+helm install etl --wait config/helm/etl/ --values config/helm/etl/values.yaml
+sh -x ./verify-etl.sh
