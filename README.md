@@ -23,7 +23,36 @@ This specific implementation takes our existing system, and moves it to the clou
 - There is an additional backend that is used for handling managing the data warehouse
 - **Everything is running on the cloud using both a containerization and externalization (SaaS) strategy**
 
-## Previous System
+# Table of Contents
+
+- [Previous System](#previous-system)
+- [Current System](#current-system)
+- [Architecture](#architecture)
+  * [Key Concepts and Technologies](#key-concepts-and-technologies)
+  * [Production](#production)
+    + [Source Control (Git)](#source-control-git)
+    + [CI/CD](#cicd)
+    + [Image Registry](#image-registry)
+    + [Kubernetes](#kubernetes)
+    + [More SaaS](#more-saas)
+  * [Local (Demonstration)](#local-demonstration)
+    + [Running it](#running-it)
+      - [(1) Start minikube](#1-start-minikube)
+      - [(2) Launch the Kubernetes Dashboard](#2-launch-the-kubernetes-dashboard)
+      - [(3) Build it all](#3-build-it-all)
+      - [(4) Start Everything](#4-start-everything)
+      - [(5) Seed Data](#5-seed-data)
+      - [(6) Login](#6-login)
+    + [Primary Database (pg-primary)](#primary-database-pg-primary)
+    + [Secondary Database (pg-secondary)](#secondary-database-pg-secondary)
+    + [Elasticsearch](#elasticsearch)
+    + [Kibana](#kibana)
+    + [Backend](#backend)
+    + [ETL](#etl)
+    + [Frontend](#frontend)
+    + [Prometheus](#prometheus)
+
+# Previous System
 
 **Data warehousing (Rating: a thousand consistently)**
 
@@ -49,7 +78,7 @@ Cons
 - Usage of the data warehouse required specialized tools and knowledge.
 - Core reliance on RDMS limits upper scalability.
 
-## Current System
+# Current System
 
 **SaaS (Rating: 10k)**
 
