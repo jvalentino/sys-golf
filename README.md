@@ -23,6 +23,13 @@ This specific implementation takes our existing system, and moves it to the clou
 - There is an additional backend that is used for handling managing the data warehouse
 - **Everything is running on the cloud using both a containerization and externalization (SaaS) strategy**
 
+System Components
+
+- Architecture/Environment: https://github.com/jvalentino/sys-golf
+- REST: https://github.com/jvalentino/sys-golf-rest
+- ETL: https://github.com/jvalentino/sys-golf-etl
+- Frontend: https://github.com/jvalentino/sys-golf-ui
+
 # Table of Contents
 
 - [Previous System](#previous-system)
